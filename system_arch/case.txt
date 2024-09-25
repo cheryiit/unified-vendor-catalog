@@ -1,0 +1,43 @@
+Case Study: Unified Vendor Data
+A retail company aims to provide customers with an up-to-date and unified product catalog sourced
+from multiple vendors. To achieve this, the company develops a mobile app using Flutter that
+displays product listings in near real-time. The backend, built with FastAPI, retrieves product
+information—such as name, description, price, and photos—from various vendor APIs and unifies
+this data. The architecture is designed for fast data retrieval and processing, ensuring a seamless
+user experience on mobile devices.
+
+
+Local-First Architecture Overview
+• Mobile App: The client application that users interact with to request product data.
+• FastAPI Backend: The server-side application that processes data requests and
+communicates with other system components.
+• Kafka: A distributed streaming platform used for messaging between the backend and Flink.
+• Flink: A stream processing framework responsible for data transformation and external API
+calls.
+• Who is actually responsible for external API call Flink or Backend?
+• SQLite: A lightweight database for quick local data storage and retrieval for active products.
+• PostgreSQL: A relational database used for long-term storage and analytics.
+
+
+Data Flow Steps
+1. The user requests product data from the mobile app.
+2. FastAPI checks SQLite for the requested information.
+3. If the data is unavailable in SQLite, FastAPI sends a message to Kafka.
+4. Flink processes the message from Kafka, retrieves the data from the external API, and stores
+it in SQLite.
+5. The data in SQLite is then synchronized with PostgreSQL for long-term storage using
+debezium and SymmetricDS.
+
+
+Key Points
+• FastAPI acts as the initial point of contact for data requests, checking local storage before
+querying external APIs.
+• Kafka serves as the messaging system to relay data-fetching requests to Flink.
+• Flink efficiently processes data in real time, keeping the system responsive.
+• SQLite provides quick access to data, while PostgreSQL serves as a long-term storage
+solution.
+• Implementing Alistair Cockburn’s Hexagonal Architecture enhances the overall design is a
+plus. For more information, visit Alistair Cockburn's Hexagonal Architecture.
+This architecture ensures a scalable, efficient, and responsive system for managing data from
+various vendors in the retail sector. If you have any questions or need further assistance, feel free to
+ask!

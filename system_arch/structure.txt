@@ -1,0 +1,61 @@
+unified-vendor-catalog/
+│
+├── mobile_app/
+│   ├── lib/
+│   │   ├── main.dart
+│   │   ├── screens/
+│   │   ├── widgets/
+│   │   └── services/
+│   │       └── api_service.dart
+│   └── pubspec.yaml
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── api/
+│   │   │   └── routes.py
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   └── database.py
+│   │   ├── domain/
+│   │   │   ├── entities/
+│   │   │   │   └── product.py
+│   │   │   └── use_cases/
+│   │   │       └── get_product.py
+│   │   ├── adapters/
+│   │   │   ├── controllers/
+│   │   │   │   └── product_controller.py
+│   │   │   └── repositories/
+│   │   │       ├── sqlite_repository.py
+│   │   │       └── postgresql_repository.py
+│   │   │       └── message_queue/
+│   │   │           └── kafka_producer.py
+│   │   └── ports/
+│   │       ├── input_ports/
+│   │       │   └── product_use_case.py
+│   │       └── output_ports/
+│   │           ├── database_port.py
+│   │           └── message_queue_port.py
+│   ├── tests/
+│   └── requirements.txt
+│
+├── databases/
+│   ├── sqlite/
+│   │   └── init_schema.sql
+│   └── postgresql/
+│       └── init_schema.sql
+│
+├── data_sync/
+│   ├── debezium/
+│   │   └── connector_config.json
+│   └── symmetricds/
+│       └── sync_config.properties
+│
+├── deployment/
+│   ├── docker-compose.yml
+│   └── kubernetes/
+│       ├── backend-deployment.yaml
+│       ├── flink-deployment.yaml
+│       └── database-deployment.yaml
+│
+└── README.md

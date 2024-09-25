@@ -1,0 +1,14 @@
+# Ignore virtual environments
+backend/venv/
+stream_processing/venv/
+
+# Ignore other common files and directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.DS_Store
+
+# Ignore operating system-specific files
+Thumbs.db
