@@ -1,4 +1,6 @@
-case study:
+# case study UNIFIED_VENDOR_CATALOG
+___
+'''
 graph TD
     A[Flutter Mobile App] -->|1- Request product data| B[FastAPI Backend]
     B -->|2- Check local data| C[SQLite]
@@ -52,3 +54,4 @@ graph TD
     class A,B,C,D,E primary;
     class G,H,I,J,K,L secondary;
     class F,M external;
+'''
