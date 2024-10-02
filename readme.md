@@ -1,6 +1,7 @@
 # case study UNIFIED_VENDOR_CATALOG
 
 # Current structure:
+```
 multivendor-catalog/
     .gitattributes
     docker-compose.yml
@@ -43,7 +44,7 @@ multivendor-catalog/
             services/
     multivendor-catalog/
         .gitattributes
-
+```
 
 
 
